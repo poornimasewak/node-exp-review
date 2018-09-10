@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Hello Students</h1>
+
+
+    <input type="text" id="eng" />
+
+    <input type="text" id="sci" />
+    <!-- <input type="text" id="comp" />
+    <input type="text" id="math" /> -->
+
+    <button id="submit">Send</button>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#submit").on("click", function () {
+                // alert("yay it's working")
+                var student = {
+                    eng: $("#eng").val(),
+                    sci: $("#sci").val()
+                }
+                // alert(student.eng)
+
+                $.post("/api/newstudent", student, function (data) {
+
+                })
+            });
+        });
+
+    </script>
+</body>
+
+</html>
